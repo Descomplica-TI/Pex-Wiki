@@ -6,120 +6,285 @@
     <title>Guia Definitivo PEX - Wiki</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Ajustes específicos para o sidebar */
-        .sidebar {
-            background-color: var(--bg-card);
-            padding: var(--spacing-sm) 0;
-            position: sticky;
-            top: 24px;
+        /* ── View sections ─────────────────────────────── */
+        .view-section {
+            display: none;          /* todas ocultas por padrão */
         }
+        .view-section.is-active {
+            display: block;         /* apenas a ativa fica visível */
+        }
+
+        /* ── Sidebar active state ──────────────────────── */
+        /* Sobrescreve o genérico do styles.css com visual mais forte */
         .sidebar-nav-item {
-            padding: 8px 16px;
+            display: block;
+            padding: 9px 16px 9px 14px;   /* 14px para acomodar a borda */
             color: var(--text-secondary);
             font-weight: 500;
-            display: block; /* convert to block for links */
+            cursor: pointer;
+            border-left: 2px solid transparent;
+            transition: background 0.15s, color 0.15s, border-color 0.15s;
+            text-decoration: none;
         }
-        .sidebar-nav-item.active {
+        .sidebar-nav-item:hover {
             background-color: var(--bg-sidebar-hover);
             color: var(--text-primary);
         }
-        
-        .main-content h2 { margin-top: 40px; margin-bottom: 16px; font-size: 20px;}
+        .sidebar-nav-item.active {
+            background-color: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+            font-weight: 600;
+            border-left: 2px solid #5865f2;  /* azul/roxo Discord */
+        }
+
+        /* ── Content typography ────────────────────────── */
+        .main-content h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .main-content h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 14px;
+        }
     </style>
 </head>
 <body>
 
 <main class="container">
     <div class="internal-layout">
-        <!-- Sidebar Navigation -->
+
+        <!-- ── Sidebar ──────────────────────────────────── -->
         <aside class="sidebar">
             <nav>
                 <ul class="sidebar-nav">
-                    <li><a href="#introducao" class="sidebar-nav-item active" data-target="introducao">Introdução ao PEX</a></li>
-                    <li><a href="#carga-horaria" class="sidebar-nav-item" data-target="carga-horaria">Carga Horária</a></li>
-                    <li><a href="#temas" class="sidebar-nav-item" data-target="temas">Temas e Projetos</a></li>
-                    <li><a href="#funcionalidades" class="sidebar-nav-item" data-target="funcionalidades">Funcionalidades</a></li>
-                    <li><a href="#criterios" class="sidebar-nav-item" data-target="criterios">Critérios</a></li>
+                    <li><a class="sidebar-nav-item active" data-view="introducao" href="#introducao">Introdução ao PEX</a></li>
+                    <li><a class="sidebar-nav-item" data-view="carga-horaria" href="#carga-horaria">Carga Horária e Prazos</a></li>
+                    <li><a class="sidebar-nav-item" data-view="temas" href="#temas">Temas e Escopo</a></li>
+                    <li><a class="sidebar-nav-item" data-view="funcionalidades" href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a class="sidebar-nav-item" data-view="criterios" href="#criterios">Critérios de Avaliação</a></li>
+                    <li><a class="sidebar-nav-item" data-view="submissao" href="#submissao">Submissão Final</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content Area -->
-        <article class="main-content">
-            <h1 id="introducao">Guia Definitivo do Projeto de Extensão (PEX)</h1>
-            <p>Este guia abordará as instruções de forma abrangente sobre o modelo de PEX na instituição, fornecendo os detalhes e passos lógicos necessários para elaboração e conclusão do projeto obrigatório. Este material visa facilitar o processo do estudante desde a concepção até a submissão no sistema.</p>
+        <!-- ── Content Switcher ─────────────────────────── -->
+        <div class="main-content">
 
-            <h2 id="carga-horaria">Carga Horária e Prazos</h2>
-            <p>Compreender o prazo de desenvolvimento do projeto é a etapa crítica inicial. Selecione um plano estruturado de acordo com o cronograma estabelecido por semestre e reserve a carga horária em sua rotina acadêmica. A entrega atrasada de relatórios resultará na não emissão de conceito para o período.</p>
-            
-            <div class="structured-block">
-                <div class="block-header">
-                    <span>Módulo 1 - Regras Básicas</span>
-                </div>
-                <div class="block-content">
-                    <div class="field-group">
-                        <span class="field-label">Horas Estimadas</span>
-                        <div class="field-input-mock">300 a 400 horas dependendo do curso.</div>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">Prazo de Submissão final</span>
-                        <div class="field-input-mock">Avalie no Moodle o cronograma semestral.</div>
+            <!-- VIEW: Introdução -->
+            <section class="view-section is-active" id="introducao">
+                <h1>Introdução ao PEX</h1>
+                <p>O Projeto de Extensão (PEX) é uma atividade curricular obrigatória que integra os conhecimentos adquiridos ao longo do curso com demandas reais da sociedade. Este guia abrange todas as instruções necessárias para que você elabore, execute e entregue seu projeto com excelência.</p>
+                <p>O PEX conecta a teoria estudada em sala com a prática no mundo real, seja por meio de desenvolvimento de sistemas, ações sociais, pesquisa aplicada ou consultoria comunitária.</p>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>O que é o PEX?</span></div>
+                    <div class="block-content">
+                        <p style="margin-bottom:0">Uma atividade extensionista que deve gerar impacto mensurável em um grupo ou comunidade. Vai além de um trabalho acadêmico: é uma intervenção real no mundo.</p>
                     </div>
                 </div>
-            </div>
 
-            <h2 id="temas">Temas e Escopo do Projeto</h2>
-            <p>O Projeto de Extensão deve oferecer valor real e impacto prático na comunidade ou na sua área de formação. Você precisa escolher um escopo aplicável. Projetos essencialmente teóricos não são adequados para a métrica final do PEX.</p>
-            
-            <div class="structured-block">
-                <div class="block-header">
-                    <span>Sugestão de Escolha de Tema</span>
-                </div>
-                <div class="block-content">
-                    <p style="margin-bottom: 0;">Encontre um problema da sociedade atual que pode ser mitigado por meio dos conceitos adquiridos no seu curso (ex: Desenvolvimento de Sistemas, Gestão Financeira, Marketing Social). Documente o perfil do público-alvo beneficiado.</p>
-                </div>
-            </div>
-
-            <h2 id="funcionalidades">Funcionalidades e Entregáveis</h2>
-            <p>Cada projeto tem que obedecer um escopo mínimo de requisitos funcionais ou metodológicos.</p>
-            
-            <div class="structured-block">
-                <div class="block-header">
-                    <span>Requisito Obrigatório no Relatório</span>
-                </div>
-                <div class="block-content">
-                    <div class="field-group">
-                        <span class="field-label">Justificativa</span>
-                        <div class="field-input-mock">Redigir no formato ABNT evidenciando o apelo social/tecnológico.</div>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">Anexos Mídia</span>
-                        <div class="field-input-mock">Você precisará fornecer capturas, links de código (repositórios) ou imagens da ação em campo conforme a disciplina.</div>
+                <div class="structured-block">
+                    <div class="block-header"><span>Por que é obrigatório?</span></div>
+                    <div class="block-content">
+                        <p style="margin-bottom:0">A legislação educacional brasileira (Resolução CNE/CES nº 7/2018) exige que cursos de graduação reservem ao menos 10% da carga horária total para atividades de extensão universitária.</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <h2 class="mt-lg mb-lg" id="criterios">Critérios e Correção</h2>
-            <p>Toda a correção baseia-se em uma rubrica objetiva verificada pelo seu orientador/tutor designado.</p>
-            
-             <div class="structured-block">
-                <div class="block-header">
-                    <span>Tabela Resumo (Fictícia)</span>
+            <!-- VIEW: Carga Horária -->
+            <section class="view-section" id="carga-horaria">
+                <h1>Carga Horária e Prazos</h1>
+                <p>Compreender o cronograma é a etapa crítica inicial. Reserve a carga horária em sua rotina acadêmica com antecedência. A entrega atrasada de relatórios resultará na não emissão de conceito para o período.</p>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Módulo 1 — Regras de Carga Horária</span></div>
+                    <div class="block-content">
+                        <div class="field-group">
+                            <span class="field-label">Horas Estimadas</span>
+                            <div class="field-input-mock">300 a 400 horas dependendo do curso e semestre.</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Distribuição Recomendada</span>
+                            <div class="field-input-mock">Divida as horas em 3 fases: Planejamento (20%), Execução (60%) e Documentação (20%).</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Prazo de Submissão Final</span>
+                            <div class="field-input-mock">Consulte o cronograma semestral disponível no Moodle da instituição.</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="block-content" style="padding: 0;">
-                     <div style="padding: 16px; border-bottom: 1px solid var(--border-color);">
-                        <strong style="color: var(--text-primary); display:block; margin-bottom: 4px;">Escrita Acadêmica</strong>
-                        <span style="color: var(--text-secondary); font-size: 13px;">Peso 30%. Avalia norma padrão e formatação.</span>
-                     </div>
-                     <div style="padding: 16px;">
-                        <strong style="color: var(--text-primary); display:block; margin-bottom: 4px;">Impacto do Projeto</strong>
-                        <span style="color: var(--text-secondary); font-size: 13px;">Peso 70%. Avaliação direta da contribuição real proporcionada.</span>
-                     </div>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Consequências de Atraso</span></div>
+                    <div class="block-content" style="padding:0">
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Relatório Parcial em Atraso</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Desconto proporcional na nota da etapa correspondente.</span>
+                        </div>
+                        <div style="padding:14px 16px">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Relatório Final em Atraso</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Reprovação automática no componente curricular do PEX no semestre vigente.</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <br/><br/><br/>
-        </article>
-    </div>
+            </section>
+
+            <!-- VIEW: Temas -->
+            <section class="view-section" id="temas">
+                <h1>Temas e Escopo do Projeto</h1>
+                <p>O PEX deve oferecer valor real e impacto prático. Projetos essencialmente teóricos não atendem à métrica de avaliação. Escolha um escopo aplicável à sua área de formação.</p>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Como escolher um bom tema</span></div>
+                    <div class="block-content">
+                        <div class="field-group">
+                            <span class="field-label">Passo 1 — Identifique um problema real</span>
+                            <div class="field-input-mock">Mapeie um problema da comunidade que pode ser mitigado pelos conhecimentos do seu curso (ex: sistemas, saúde, finanças, educação).</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Passo 2 — Defina o público-alvo</span>
+                            <div class="field-input-mock">Documente o perfil do grupo que será diretamente beneficiado (ex: jovens de escola pública, MEIs da região, idosos em ILPI).</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Passo 3 — Valide com o orientador</span>
+                            <div class="field-input-mock">Apresente a proposta de tema ao tutor antes de começar. A aprovação prévia é recomendada para evitar retrabalho.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Exemplos de Temas por Área</span></div>
+                    <div class="block-content" style="padding:0">
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Tecnologia da Informação</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Desenvolvimento de aplicativo para ONG, sistema de agendamento para pequeno negócio, automação de processos manuais.</span>
+                        </div>
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Administração / Gestão</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Consultoria financeira para MEI, implantação de processos em associação comunitária.</span>
+                        </div>
+                        <div style="padding:14px 16px">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Marketing / Design</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Campanha de comunicação social, identidade visual para negócio local emergente.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: Funcionalidades -->
+            <section class="view-section" id="funcionalidades">
+                <h1>Funcionalidades e Entregáveis</h1>
+                <p>Cada projeto deve obedecer a um escopo mínimo de entregáveis documentais e práticos, independente da área de formação.</p>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Entregáveis Obrigatórios</span></div>
+                    <div class="block-content">
+                        <div class="field-group">
+                            <span class="field-label">Relatório Parcial</span>
+                            <div class="field-input-mock">Documento ABNT descrevendo o planejamento, diagnóstico da situação e cronograma de execução. Entregue no meio do semestre.</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Relatório Final</span>
+                            <div class="field-input-mock">Documento completo com justificativa, metodologia, resultados obtidos, discussão e conclusão. Formato ABNT obrigatório.</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Anexos e Evidências</span>
+                            <div class="field-input-mock">Capturas de tela, fotos da ação em campo, links de repositório de código, assinaturas de participantes (quando aplicável).</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Formulário de Horas</span>
+                            <div class="field-input-mock">Diário de atividades com data, descrição e horas dedicadas. Assinado pelo responsável da entidade parceira (se houver).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Dica — Repositório no GitHub</span></div>
+                    <div class="block-content">
+                        <p style="margin-bottom:0">Para projetos de TI, hospede o código no GitHub e inclua o link no relatório. Deixe o repositório público para que o avaliador possa acessar sem barreiras.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: Critérios -->
+            <section class="view-section" id="criterios">
+                <h1>Critérios de Avaliação</h1>
+                <p>A correção baseia-se em uma rubrica objetiva verificada pelo orientador/tutor designado. Conheça os pesos para priorizar seu esforço corretamente.</p>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Rubrica de Avaliação</span></div>
+                    <div class="block-content" style="padding:0">
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Escrita Acadêmica — Peso 30%</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Norma ABNT, coerência textual, estrutura do relatório, ausência de plágio.</span>
+                        </div>
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Impacto Social / Técnico — Peso 40%</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Contribuição real e mensurável para o público-alvo. Evidências documentadas no relatório.</span>
+                        </div>
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Qualidade das Evidências — Peso 20%</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Diversidade e pertinência dos anexos: fotos, prints, código, formulários, relatórios de campo.</span>
+                        </div>
+                        <div style="padding:14px 16px">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">Pontualidade nas Entregas — Peso 10%</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Respeito aos prazos do relatório parcial e final conforme calendário acadêmico.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: Submissão -->
+            <section class="view-section" id="submissao">
+                <h1>Submissão Final</h1>
+                <p>Após concluir toda a execução e documentação do projeto, siga as etapas abaixo para a submissão formal e garantir a aprovação no componente curricular.</p>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Passo a Passo da Submissão</span></div>
+                    <div class="block-content">
+                        <div class="field-group">
+                            <span class="field-label">Etapa 1 — Conversão para PDF</span>
+                            <div class="field-input-mock">Converta o documento Word final para PDF mantendo a formatação ABNT íntegra. Verifique margens, fontes e sumário.</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Etapa 2 — Revisão de Plágio</span>
+                            <div class="field-input-mock">Execute o relatório no Turnitin ou Copyspider. A taxa de similaridade aceitável é inferior a 25%.</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Etapa 3 — Upload na Plataforma</span>
+                            <div class="field-input-mock">Acesse o Moodle → Disciplina PEX → Tarefa de Submissão Final → Anexe o PDF e confirme o envio.</div>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">Etapa 4 — Confirmação por E-mail</span>
+                            <div class="field-input-mock">Você receberá um e-mail automático de confirmação após o envio bem-sucedido. Guarde esse e-mail como comprovante.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="structured-block">
+                    <div class="block-header"><span>Checklist antes de Enviar</span></div>
+                    <div class="block-content" style="padding:0">
+                        <div style="padding:12px 16px; border-bottom:1px solid var(--border-color)">
+                            <span style="color:var(--text-secondary); font-size:13px">✅ Relatório em formato PDF com nome correto (ex: <em>PEX_NomeAluno_Semestre.pdf</em>)</span>
+                        </div>
+                        <div style="padding:12px 16px; border-bottom:1px solid var(--border-color)">
+                            <span style="color:var(--text-secondary); font-size:13px">✅ Todas as seções obrigatórias presentes (Introdução, Metodologia, Resultados, Conclusão)</span>
+                        </div>
+                        <div style="padding:12px 16px; border-bottom:1px solid var(--border-color)">
+                            <span style="color:var(--text-secondary); font-size:13px">✅ Anexos e evidências incluídos e nomeados corretamente</span>
+                        </div>
+                        <div style="padding:12px 16px">
+                            <span style="color:var(--text-secondary); font-size:13px">✅ Formulário de horas assinado digitalizado em PDF junto ao relatório</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /.main-content -->
+    </div><!-- /.internal-layout -->
 </main>
 
 <script src="js/main.js"></script>

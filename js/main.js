@@ -1,54 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Sidebar active item scroll-spy
-    const sections = document.querySelectorAll('.main-content h1, .main-content h2');
-    const navItems = document.querySelectorAll('.sidebar-nav-item');
 
-    if (sections.length > 0 && navItems.length > 0) {
-        window.addEventListener('scroll', () => {
-            let current = '';
+    // ── View Switcher (Discohook-style isolated navigation) ──────────────────
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= (sectionTop - 60)) {
-                    current = section.getAttribute('id');
-                }
+    const navItems = document.querySelectorAll('.sidebar-nav-item[data-view]');
+    const sections = document.querySelectorAll('.view-section');
+
+    if (navItems.length > 0 && sections.length > 0) {
+
+        /**
+         * Ativa uma view pelo seu ID e atualiza o estado visual da sidebar.
+         * @param {string} viewId - Valor do atributo [data-view] do link clicado.
+         */
+        function activateView(viewId) {
+            // 1. Ocultar TODAS as sections
+            sections.forEach(sec => {
+                sec.classList.remove('is-active');
             });
 
+            // 2. Exibir APENAS a section correspondente
+            const target = document.getElementById(viewId);
+            if (target) {
+                target.classList.add('is-active');
+            }
+
+            // 3. Remover active de todos os itens da sidebar
             navItems.forEach(item => {
                 item.classList.remove('active');
-                if (item.getAttribute('data-target') === current) {
-                    item.classList.add('active');
-                }
             });
-        });
 
-        // Smooth scrolling when clicking on sidebar links
-        navItems.forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('data-target');
-                const targetElement = document.getElementById(targetId);
+            // 4. Aplicar active ao item clicado
+            const activeLink = document.querySelector(`.sidebar-nav-item[data-view="${viewId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
 
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 40,
-                        behavior: 'smooth'
-                    });
-                }
+            // 5. Forçar scroll de volta ao topo sempre que trocar de view
+            window.scrollTo(0, 0);
+        }
+
+        // Escutar cliques na sidebar
+        navItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault(); // Impede navegação por âncora e reload
+                const viewId = this.getAttribute('data-view');
+                activateView(viewId);
             });
         });
     }
 
-    // Interactive Card Mock - just to show cursor pointer
+    // ── Card click handler (Index Page) ─────────────────────────────────────
+
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('click', () => {
-            // Se for um link de verdade, o HTML fará a navegação
             const href = card.getAttribute('href');
-            if(href && href !== '#'){
+            if (href && href !== '#') {
                 window.location.href = href;
             }
         });
     });
+
 });
