@@ -243,12 +243,13 @@ h1.main-title {
 }
 
 .sidebar-nav-item {
+  display: block;
   padding: 8px var(--spacing-md);
   color: var(--text-secondary);
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  border-left: 2px solid transparent; /* Para active state posterior */
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .sidebar-nav-item:hover {
@@ -259,6 +260,7 @@ h1.main-title {
 .sidebar-nav-item.active {
   background-color: rgba(255, 255, 255, 0.05); /* Slight highlight */
   color: var(--text-primary);
+  box-shadow: inset 3px 0 0 0 #5865f2; /* Sobrepõe sem ocupar espaço físico ou empurrar o texto */
 }
 
 /* Main Content Area */
