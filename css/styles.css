@@ -154,6 +154,13 @@ h1.main-title {
   border: 1px solid var(--border-color);
 }
 
+@media (max-width: 767px) {
+  .sidebar {
+    position: static;   /* Remove o sticky no mobile */
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .sidebar {
     width: 260px;
