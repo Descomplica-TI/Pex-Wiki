@@ -56,3 +56,5 @@ Qualquer um é bem-vindo a adicionar um erro de material da faculdade, uma alter
 Wiki baseada na documentação aberta elaborada exaustivamente por Carlos Henrique (PexyAI) e projetada e compilada pelo [Aster](https://github.com/zAstergun).
 
 Para dúvidas sobre Ciências da Computação, ou os projetos, [Junte-se à Comunidade do Discord](https://discord.gg/AEvAXJ28WQ)!
+
+Este projeto é distribuído sob a licença AGPL-3.0, herdada do repositório original. Sinta-se livre para usar, modificar e distribuir, desde que mantenha o projeto aberto sob as mesmas condições.
