@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Definitivo PEX - Wiki</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Ajustes específicos para o sidebar */
+        .sidebar {
+            background-color: var(--bg-card);
+            padding: var(--spacing-sm) 0;
+            position: sticky;
+            top: 24px;
+        }
+        .sidebar-nav-item {
+            padding: 8px 16px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            display: block; /* convert to block for links */
+        }
+        .sidebar-nav-item.active {
+            background-color: var(--bg-sidebar-hover);
+            color: var(--text-primary);
+        }
+        
+        .main-content h2 { margin-top: 40px; margin-bottom: 16px; font-size: 20px;}
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <div class="internal-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#introducao" class="sidebar-nav-item active" data-target="introducao">Introdução ao PEX</a></li>
+                    <li><a href="#carga-horaria" class="sidebar-nav-item" data-target="carga-horaria">Carga Horária</a></li>
+                    <li><a href="#temas" class="sidebar-nav-item" data-target="temas">Temas e Projetos</a></li>
+                    <li><a href="#funcionalidades" class="sidebar-nav-item" data-target="funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#criterios" class="sidebar-nav-item" data-target="criterios">Critérios</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <article class="main-content">
+            <h1 id="introducao">Guia Definitivo do Projeto de Extensão (PEX)</h1>
+            <p>Este guia abordará as instruções de forma abrangente sobre o modelo de PEX na instituição, fornecendo os detalhes e passos lógicos necessários para elaboração e conclusão do projeto obrigatório. Este material visa facilitar o processo do estudante desde a concepção até a submissão no sistema.</p>
+
+            <h2 id="carga-horaria">Carga Horária e Prazos</h2>
+            <p>Compreender o prazo de desenvolvimento do projeto é a etapa crítica inicial. Selecione um plano estruturado de acordo com o cronograma estabelecido por semestre e reserve a carga horária em sua rotina acadêmica. A entrega atrasada de relatórios resultará na não emissão de conceito para o período.</p>
+            
+            <div class="structured-block">
+                <div class="block-header">
+                    <span>Módulo 1 - Regras Básicas</span>
+                </div>
+                <div class="block-content">
+                    <div class="field-group">
+                        <span class="field-label">Horas Estimadas</span>
+                        <div class="field-input-mock">300 a 400 horas dependendo do curso.</div>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-label">Prazo de Submissão final</span>
+                        <div class="field-input-mock">Avalie no Moodle o cronograma semestral.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="temas">Temas e Escopo do Projeto</h2>
+            <p>O Projeto de Extensão deve oferecer valor real e impacto prático na comunidade ou na sua área de formação. Você precisa escolher um escopo aplicável. Projetos essencialmente teóricos não são adequados para a métrica final do PEX.</p>
+            
+            <div class="structured-block">
+                <div class="block-header">
+                    <span>Sugestão de Escolha de Tema</span>
+                </div>
+                <div class="block-content">
+                    <p style="margin-bottom: 0;">Encontre um problema da sociedade atual que pode ser mitigado por meio dos conceitos adquiridos no seu curso (ex: Desenvolvimento de Sistemas, Gestão Financeira, Marketing Social). Documente o perfil do público-alvo beneficiado.</p>
+                </div>
+            </div>
+
+            <h2 id="funcionalidades">Funcionalidades e Entregáveis</h2>
+            <p>Cada projeto tem que obedecer um escopo mínimo de requisitos funcionais ou metodológicos.</p>
+            
+            <div class="structured-block">
+                <div class="block-header">
+                    <span>Requisito Obrigatório no Relatório</span>
+                </div>
+                <div class="block-content">
+                    <div class="field-group">
+                        <span class="field-label">Justificativa</span>
+                        <div class="field-input-mock">Redigir no formato ABNT evidenciando o apelo social/tecnológico.</div>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-label">Anexos Mídia</span>
+                        <div class="field-input-mock">Você precisará fornecer capturas, links de código (repositórios) ou imagens da ação em campo conforme a disciplina.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="mt-lg mb-lg" id="criterios">Critérios e Correção</h2>
+            <p>Toda a correção baseia-se em uma rubrica objetiva verificada pelo seu orientador/tutor designado.</p>
+            
+             <div class="structured-block">
+                <div class="block-header">
+                    <span>Tabela Resumo (Fictícia)</span>
+                </div>
+                <div class="block-content" style="padding: 0;">
+                     <div style="padding: 16px; border-bottom: 1px solid var(--border-color);">
+                        <strong style="color: var(--text-primary); display:block; margin-bottom: 4px;">Escrita Acadêmica</strong>
+                        <span style="color: var(--text-secondary); font-size: 13px;">Peso 30%. Avalia norma padrão e formatação.</span>
+                     </div>
+                     <div style="padding: 16px;">
+                        <strong style="color: var(--text-primary); display:block; margin-bottom: 4px;">Impacto do Projeto</strong>
+                        <span style="color: var(--text-secondary); font-size: 13px;">Peso 70%. Avaliação direta da contribuição real proporcionada.</span>
+                     </div>
+                </div>
+            </div>
+            <br/><br/><br/>
+        </article>
+    </div>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
