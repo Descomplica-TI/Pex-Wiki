@@ -3,61 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEX Wiki - Guias</title>
+    <title>PEX Wiki — Guia Definitivo da Descomplica</title>
+    <meta name="description" content="Wiki completa sobre o Projeto de Extensão (PEX) da Descomplica. Roteiros, checklists, critérios de avaliação e dicas práticas para você concluir seu PEX com sucesso.">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, rgba(88,101,242,0.15) 0%, rgba(88,101,242,0.03) 100%);
+            border: 1px solid rgba(88,101,242,0.25);
+            border-radius: 12px;
+            padding: 32px 28px;
+            margin-bottom: 36px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(88,101,242,0.2);
+            border: 1px solid rgba(88,101,242,0.4);
+            color: #adb9ff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+        }
+        .hero h1 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #f2f3f5;
+        }
+        .hero p {
+            color: #b5bac1;
+            font-size: 15px;
+            max-width: 640px;
+            line-height: 1.6;
+        }
+        .hero-meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #b5bac1;
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
 
 <main class="container">
-    <h1 class="main-title">Guias PEX (Projeto de Extensão)</h1>
 
-    <h2 class="section-title">Início Rápido</h2>
+    <!-- Hero Banner -->
+    <div class="hero">
+        <span class="hero-badge">📚 Wiki Acadêmica</span>
+        <h1>Guia Definitivo do PEX</h1>
+        <p>Tudo que você precisa saber sobre o Projeto de Extensão na Descomplica — desde o primeiro roteiro até a submissão final.</p>
+        <div class="hero-meta">
+            <span class="hero-meta-item">🎓 Descomplica Faculdade Digital</span>
+            <span class="hero-meta-item">📋 PEX I ao PEX VII</span>
+            <span class="hero-meta-item">🏆 Tech · Gestão · Humanidades</span>
+        </div>
+    </div>
+
+    <!-- Seção: Fundamentos -->
+    <h2 class="section-title">🔍 Fundamentos do PEX</h2>
     <div class="card-grid">
         <a href="guia-pex.html" class="card">
             <h3 class="card-title">O que é o PEX?</h3>
-            <p class="card-desc">Uma visão geral do Projeto de Extensão na Descomplica e seus objetivos principais.</p>
+            <p class="card-desc">Entenda o que é a Extensão Universitária, por que é obrigatória e quem precisa fazer. Inclui a mudança de 2025.3.</p>
         </a>
-        <a href="guia-pex.html#carga-horaria" class="card">
-            <h3 class="card-title">Carga Horária e Prazos</h3>
-            <p class="card-desc">Informações sobre as horas necessárias e até quando cada etapa deve ser entregue.</p>
+        <a href="guia-pex.html?view=carga-horaria" class="card">
+            <h3 class="card-title">⏰ Carga Horária e Prazos</h3>
+            <p class="card-desc">40h por semestre, cronograma acadêmico e consequências do atraso nas entregas parcial e final.</p>
         </a>
-        <a href="guia-pex.html#temas" class="card">
-            <h3 class="card-title">Escolha do Tema</h3>
-            <p class="card-desc">Como encontrar e selecionar um tema aprovado para o seu projeto.</p>
-        </a>
-        <a href="guia-pex.html#funcionalidades" class="card">
-            <h3 class="card-title">Funcionalidades do Projeto</h3>
-            <p class="card-desc">Diretrizes do que o seu projeto precisa entregar como resultado final.</p>
+        <a href="guia-pex.html?view=temas" class="card">
+            <h3 class="card-title">🗂 Temas e Escopo</h3>
+            <p class="card-desc">Como escolher o local de realização, o tema e exemplos por área (Tech, Gestão e Humanidades).</p>
         </a>
     </div>
 
-    <h2 class="section-title">Avaliação e Submissão</h2>
+    <!-- Seção: Execução -->
+    <h2 class="section-title">🏗️ Execução e Entregáveis</h2>
     <div class="card-grid">
-        <a href="guia-pex.html#criterios" class="card">
-            <h3 class="card-title">Critérios de Avaliação</h3>
-            <p class="card-desc">Quais pontos serão avaliados para a sua nota final no PEX.</p>
+        <a href="guia-pex.html?view=funcionalidades" class="card">
+            <h3 class="card-title">📦 Relatório e Evidências</h3>
+            <p class="card-desc">Quais documentos entregar: relatório parcial, final, fotos, prints, termo de autorização e formulário de horas.</p>
         </a>
-        <a href="guia-pex.html#submissao" class="card">
-            <h3 class="card-title">Como Submeter</h3>
-            <p class="card-desc">Processo de formatação do documento final e envio pela plataforma.</p>
+        <a href="guia-pex.html?view=criterios" class="card">
+            <h3 class="card-title">📊 Critérios de Avaliação</h3>
+            <p class="card-desc">Rubrica com pesos: Escrita Acadêmica (30%), Impacto (40%), Evidências (20%) e Pontualidade (10%).</p>
+        </a>
+        <a href="guia-pex.html?view=submissao" class="card">
+            <h3 class="card-title">📥 Submissão Final</h3>
+            <p class="card-desc">Passo a passo para converter, revisar plágio, fazer upload no LMS e confirmar o envio. Com checklist interativo.</p>
         </a>
     </div>
 
-    <h2 class="section-title">Recursos Adicionais</h2>
+    <!-- Seção: Missões Práticas -->
+    <h2 class="section-title">📋 Missões Práticas (O que fazer)</h2>
     <div class="card-grid">
-        <a href="#" class="card">
-            <h3 class="card-title">Templates Oficiais</h3>
-            <p class="card-desc">Download dos modelos de documentos em Word para padronização.</p>
+        <a href="guia-pex.html?view=missao-pex1" class="card">
+            <h3 class="card-title">PEX I — Introdução</h3>
+            <p class="card-desc">Ler artigo dos Anais, identificar ODS e redigir conclusões. Sem visita a campo.</p>
         </a>
-        <a href="#" class="card">
-            <h3 class="card-title">Exemplos de Projetos</h3>
-            <p class="card-desc">Galeria com alguns dos melhores Projetos de Extensão já entregues.</p>
+        <a href="guia-pex.html?view=missao-pex2" class="card">
+            <h3 class="card-title">PEX II — Reconhecimento</h3>
+            <p class="card-desc">Primeira visita ao campo. Diagnóstico da organização, coleta do Termo de Autorização e relatório técnico.</p>
         </a>
-        <a href="#" class="card">
-            <h3 class="card-title">Fale com o Suporte</h3>
-            <p class="card-desc">Abra um chamado caso enfrente problemas técnicos com a submissão.</p>
+        <a href="guia-pex.html?view=missao-pex3" class="card">
+            <h3 class="card-title">PEX III — Análise</h3>
+            <p class="card-desc">Aprofundamento nos problemas. Causa raiz, SWOT, proposição de estratégias e materiais técnicos.</p>
+        </a>
+        <a href="guia-pex.html?view=missao-pex4" class="card">
+            <h3 class="card-title">PEX IV — Coleta de Dados</h3>
+            <p class="card-desc">Plano de coleta, entrevistas, organização dos dados e consolidação em relatório ou dossê técnico.</p>
+        </a>
+        <a href="guia-pex.html?view=missao-pex5" class="card">
+            <h3 class="card-title">PEX V — Construção</h3>
+            <p class="card-desc">Estruturação completa do projeto e execução piloto em escala reduzida para validação.</p>
+        </a>
+        <a href="guia-pex.html?view=missao-pex6" class="card">
+            <h3 class="card-title">PEX VI — Execução</h3>
+            <p class="card-desc">Deploy completo da solução em campo com monitoramento de indicadores e gestão de imprevistos.</p>
+        </a>
+        <a href="guia-pex.html?view=missao-pex7" class="card">
+            <h3 class="card-title">PEX VII — Avaliação</h3>
+            <p class="card-desc">Análise crítica do impacto gerado, mapeamento de sucessos/fracassos e relatório final de avaliação.</p>
+        </a>
+        <a href="guia-pex.html?view=missao-pex8" class="card">
+            <h3 class="card-title">PEX VIII — Consolidação</h3>
+            <p class="card-desc">Legado do projeto: material reutilizável, conteúdo de disseminação e submissão ao Festival de Inovação.</p>
         </a>
     </div>
+
+    <!-- Seção: Recursos Úteis -->
+    <h2 class="section-title">🔗 Recursos Úteis</h2>
+    <div class="card-grid">
+        <a href="https://docs.google.com/spreadsheets/d/19go70mkQErp1Yt2gK_xoHmry0s7v6di1tOyF2voIgTU/edit#gid=1291527753" target="_blank" class="card">
+            <h3 class="card-title">📅 Calendário Acadêmico</h3>
+            <p class="card-desc">Planilha oficial da Descomplica com todos os prazos de entrega por semestre e trimestre.</p>
+        </a>
+        <a href="https://1653949.fs1.hubspotusercontent-na1.net/hubfs/1653949/Manual%20Projeto%20de%20Extens%c3%a3o%202024.pdf" target="_blank" rel="noopener noreferrer" class="card">
+            <h3 class="card-title">📘 Manual Oficial do PEX 2024</h3>
+            <p class="card-desc">Documento oficial da Descomplica com todas as diretrizes, regras e orientações do Projeto de Extensão.</p>
+        </a>
+        <a href="https://github.com/CarlosHOliver/pex-guiadefinitivo" target="_blank" class="card">
+            <h3 class="card-title">📖 Guia Original (GitHub)</h3>
+            <p class="card-desc">Repositório do Guia Definitivo do PEX por Carlos Henrique, uma das referências utilizadas na criação deste wiki.</p>
+        </a>
+        <a href="https://northern-hotel-101.notion.site/Wiki-Complica-Projeto-de-Extens-o-32e64ccccdd280f69c78f3ddd959e8f4" target="_blank" rel="noopener noreferrer" class="card">
+            <h3 class="card-title">📓 Wiki Simplificada (Notion)</h3>
+            <p class="card-desc">Versão resumida e visual do guia do PEX no Notion. Ideal para consulta rápida durante a execução do projeto.</p>
+        </a>
+    </div>
+
+    <!-- Card de destaque: Discord -->
+    <div class="card card-featured" role="link" tabindex="0" onclick="window.open('https://discord.gg/AEvAXJ28WQ','_blank')" style="cursor:pointer;">
+        <div class="card-featured-badge">💬 Comunidade Oficial</div>
+        <h3 class="card-title">🎮 Discord — Ciência da Computação</h3>
+        <p class="card-desc">Servidor criado por <a href="https://github.com/zAstergun" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:#adb9ff;font-weight:700;text-decoration:none;">Aster</a> exclusivamente para alunos de Ciência da Computação da Descomplica. Tire dúvidas, compartilhe projetos e conheça outros alunos do curso.</p>
+        <span class="card-featured-cta">Entrar no servidor →</span>
+    </div>
+
 </main>
 
 <script src="js/main.js"></script>

@@ -129,6 +129,76 @@ h1.main-title {
   line-height: 1.4;
 }
 
+/* ── Card em Destaque (Discord / Comunidade) ────────────────── */
+.card-featured {
+  display: block;
+  position: relative;
+  background: linear-gradient(135deg, rgba(88,101,242,0.15) 0%, rgba(114,137,218,0.08) 100%);
+  border: 1.5px solid rgba(88,101,242,0.6);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  margin-top: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.card-featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(88,101,242,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card-featured:hover {
+  border-color: rgba(88,101,242,0.9);
+  background: linear-gradient(135deg, rgba(88,101,242,0.22) 0%, rgba(114,137,218,0.12) 100%);
+  transform: translateY(-2px);
+}
+
+.card-featured-badge {
+  display: inline-block;
+  background: rgba(88,101,242,0.25);
+  border: 1px solid rgba(88,101,242,0.5);
+  color: #adb9ff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.card-featured .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-featured .card-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  color: var(--text-secondary);
+}
+
+.card-featured-cta {
+  display: inline-block;
+  color: #adb9ff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.card-featured:hover .card-featured-cta {
+  color: #ffffff;
+}
+
+
+
 /* Internal Layout (Sidebar + Main Content) */
 .internal-layout {
   display: flex;
@@ -257,3 +327,200 @@ h1.main-title {
 /* Utilities */
 .mb-lg { margin-bottom: var(--spacing-lg); }
 .mt-lg { margin-top: var(--spacing-lg); }
+
+/* ── Download Button ─────────────────────────────────────── */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(88,101,242,0.2) 0%, rgba(88,101,242,0.1) 100%);
+  border: 1px solid rgba(88,101,242,0.45);
+  color: #adb9ff;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  margin-bottom: var(--spacing-lg);
+}
+.download-btn:hover {
+  background: linear-gradient(135deg, rgba(88,101,242,0.35) 0%, rgba(88,101,242,0.2) 100%);
+  border-color: rgba(88,101,242,0.7);
+  color: #ffffff;
+}
+.download-btn .download-icon {
+  font-size: 16px;
+}
+
+
+/* ── Checklist Component ─────────────────────────────────── */
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: var(--spacing-md) 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: default;
+  transition: background 0.15s;
+}
+
+.checklist-item label {
+  flex: 1;
+  cursor: pointer;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.checklist-item:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.checklist-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1px solid #4e5058;
+  border-radius: 3px;
+  background-color: var(--bg-main);
+  cursor: pointer;
+  margin-top: 1px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.checklist-item input[type="checkbox"]:checked {
+  background-color: #5865f2;
+  border-color: #5865f2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M10.28 2.28L4 8.56 1.72 6.28a1 1 0 00-1.44 1.44l3 3a1 1 0 001.44 0l7-7a1 1 0 00-1.44-1.44z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+.checklist-item input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* ── Prompt Card Component  ────────────────────────────────── */
+.prompt-card {
+  position: relative;
+  background-color: #1a1b1e;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid #5865f2;
+  border-radius: var(--radius-md);
+  margin: var(--spacing-md) 0;
+  overflow: hidden;
+}
+
+.prompt-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(88, 101, 242, 0.06);
+}
+
+.prompt-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7289da;
+}
+
+.prompt-copy-btn {
+  background: rgba(88, 101, 242, 0.15);
+  border: 1px solid rgba(88, 101, 242, 0.35);
+  color: #adb9ff;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.prompt-copy-btn:hover {
+  background: rgba(88, 101, 242, 0.3);
+}
+
+.prompt-copy-btn.copied {
+  color: #57f287;
+  border-color: rgba(87, 242, 135, 0.4);
+  background: rgba(87, 242, 135, 0.08);
+}
+
+.prompt-card-body {
+  padding: 14px 16px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px;
+  color: #d4d7dc;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── Callout Component ────────────────────────────────────── */
+.callout {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  margin: var(--spacing-md) 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.callout-info {
+  background-color: rgba(0, 168, 252, 0.08);
+  border: 1px solid rgba(0, 168, 252, 0.3);
+  border-left: 3px solid #00a8fc;
+}
+
+.callout-warning {
+  background-color: rgba(250, 168, 26, 0.08);
+  border: 1px solid rgba(250, 168, 26, 0.3);
+  border-left: 3px solid #faa81a;
+}
+
+.callout-danger {
+  background-color: rgba(237, 66, 69, 0.08);
+  border: 1px solid rgba(237, 66, 69, 0.3);
+  border-left: 3px solid #ed4245;
+}
+
+.callout-icon {
+  font-size: 18px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.callout-body {
+  color: var(--text-secondary);
+}
+
+.callout-body strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+

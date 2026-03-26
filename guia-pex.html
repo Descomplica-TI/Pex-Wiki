@@ -52,13 +52,28 @@
             color: #adb9ff;
         }
 
-        /* Divisor após o botão de home */
+/* Divisor após o botão de home */
         .sidebar-divider {
             height: 1px;
             background-color: var(--border-color);
             margin: 8px 0;
         }
 
+        /* Cabeçalho de categoria dentro da sidebar */
+        .sidebar-category {
+            padding: 10px 16px 4px;
+            margin: 0;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #72767d;
+            user-select: none;
+        }
+
+        /* Grupos de menu ocultos por padrão — o JS exibe apenas o ativo */
+        #menu-execucao { display: none; }
+        #menu-missoes  { display: none; }
         /* ── Sidebar active state  ─────────────────────── */
         .sidebar-nav-item {
             display: block;
@@ -102,20 +117,44 @@
 
         <!-- ── Sidebar ──────────────────────────────────── -->
         <aside class="sidebar">
-            <!-- Botão Voltar para Home -->
+            <!-- Botão Voltar para Home (sempre visível) -->
             <a href="index.html" class="sidebar-home-btn">
                 🏠 <span>Voltar para Home</span>
             </a>
             <div class="sidebar-divider"></div>
 
-            <nav>
+            <!-- Grupo 1: Fundamentos do PEX -->
+            <nav id="menu-fundamentos" class="sidebar-menu-group">
+                <p class="sidebar-category">🔍 Fundamentos</p>
                 <ul class="sidebar-nav">
-                    <li><a class="sidebar-nav-item active" data-view="introducao" href="#introducao">Introdução ao PEX</a></li>
-                    <li><a class="sidebar-nav-item" data-view="carga-horaria" href="#carga-horaria">Carga Horária e Prazos</a></li>
-                    <li><a class="sidebar-nav-item" data-view="temas" href="#temas">Temas e Escopo</a></li>
-                    <li><a class="sidebar-nav-item" data-view="funcionalidades" href="#funcionalidades">Funcionalidades</a></li>
-                    <li><a class="sidebar-nav-item" data-view="criterios" href="#criterios">Critérios de Avaliação</a></li>
-                    <li><a class="sidebar-nav-item" data-view="submissao" href="#submissao">Submissão Final</a></li>
+                    <li><a class="sidebar-nav-item active" data-view="introducao" href="#introducao">🔍 O que é o PEX?</a></li>
+                    <li><a class="sidebar-nav-item" data-view="carga-horaria" href="#carga-horaria">⏰ Carga Horária e Prazos</a></li>
+                    <li><a class="sidebar-nav-item" data-view="temas" href="#temas">🗂 Temas e Escopo</a></li>
+                </ul>
+            </nav>
+
+            <!-- Grupo 2: Execução e Entregáveis -->
+            <nav id="menu-execucao" class="sidebar-menu-group">
+                <p class="sidebar-category">🏗️ Execução e Entregáveis</p>
+                <ul class="sidebar-nav">
+                    <li><a class="sidebar-nav-item" data-view="funcionalidades" href="#funcionalidades">📦 Relatório e Evidências</a></li>
+                    <li><a class="sidebar-nav-item" data-view="criterios" href="#criterios">📊 Critérios de Avaliação</a></li>
+                    <li><a class="sidebar-nav-item" data-view="submissao" href="#submissao">📥 Submissão Final</a></li>
+                </ul>
+            </nav>
+
+            <!-- Grupo 3: Missões Práticas -->
+            <nav id="menu-missoes" class="sidebar-menu-group">
+                <p class="sidebar-category">📋 Missões Práticas</p>
+                <ul class="sidebar-nav">
+                    <li><a class="sidebar-nav-item" data-view="missao-pex1" href="#missao-pex1">PEX I — Introdução</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex2" href="#missao-pex2">PEX II — Reconhecimento</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex3" href="#missao-pex3">PEX III — Análise</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex4" href="#missao-pex4">PEX IV — Coleta de Dados</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex5" href="#missao-pex5">PEX V — Construção</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex6" href="#missao-pex6">PEX VI — Execução</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex7" href="#missao-pex7">PEX VII — Avaliação</a></li>
+                    <li><a class="sidebar-nav-item" data-view="missao-pex8" href="#missao-pex8">PEX VIII — Consolidação</a></li>
                 </ul>
             </nav>
         </aside>
@@ -125,21 +164,135 @@
 
             <!-- VIEW: Introdução -->
             <section class="view-section is-active" id="introducao">
-                <h1>Introdução ao PEX</h1>
-                <p>O Projeto de Extensão (PEX) é uma atividade curricular obrigatória que integra os conhecimentos adquiridos ao longo do curso com demandas reais da sociedade. Este guia abrange todas as instruções necessárias para que você elabore, execute e entregue seu projeto com excelência.</p>
-                <p>O PEX conecta a teoria estudada em sala com a prática no mundo real, seja por meio de desenvolvimento de sistemas, ações sociais, pesquisa aplicada ou consultoria comunitária.</p>
+                <h1>🔍 O que é o PEX?</h1>
+                <p>O Projeto de Extensão (PEX) é a ponte entre o conhecimento acadêmico e o impacto real na sociedade. Criado com base no <strong>Guia Definitivo</strong> elaborado por Carlos Henrique (monitor da disciplina), este wiki reúne tudo que você precisa saber para planejar, executar e entregar seu PEX com sucesso.</p>
 
-                <div class="structured-block">
-                    <div class="block-header"><span>O que é o PEX?</span></div>
-                    <div class="block-content">
-                        <p style="margin-bottom:0">Uma atividade extensionista que deve gerar impacto mensurável em um grupo ou comunidade. Vai além de um trabalho acadêmico: é uma intervenção real no mundo.</p>
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Aviso Importante</strong>
+                        Este guia é uma iniciativa de aluno para aluno e não substitui as orientações oficiais. Para informações definitivas, consulte SEMPRE os canais oficiais da Faculdade Descomplica.
                     </div>
                 </div>
 
+                <h2>Por que é obrigatório?</h2>
+                <p>A obrigatoriedade não é isolada da Descomplica — é uma diretriz nacional. A <strong>Resolução MEC nº 7, de 18/12/2018</strong> exige que todos os cursos de graduação destinem ao menos 10% da carga horária para extensão universitária.</p>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">ℹ️</span>
+                    <div class="callout-body">
+                        <strong>Quem precisa fazer o PEX?</strong>
+                        Todos os alunos que ingressaram a partir de <strong>agosto de 2023 (2023.3)</strong>, incluindo quem trancou e retomou após essa data. O PEX é pré-requisito obrigatório para a colação de grau.
+                    </div>
+                </div>
+
+                <h2>Benefícios para o aluno</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox"><span>Coloca o conhecimento em prática em situações reais, consolidando o aprendizado</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Desenvolve habilidades profissionais: liderança, comunicação, resolução de problemas</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Amplia a visão de mundo com contato com diferentes realidades sociais</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Constrói networking com profissionais, organizações e comunidades</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Projetos de destaque podem ser publicados nos Anais do Festival de Inovação da faculdade</span></li>
+                </ul>
+
+                <h2>⚠️ Mudança no PEX I a partir de 2025.3</h2>
+                <p>A Descomplica reestruturou o PEX I para novos ingressantes a partir de agosto de 2025, tornando-o um semestre <strong>teórico e preparatório</strong>.</p>
+
                 <div class="structured-block">
-                    <div class="block-header"><span>Por que é obrigatório?</span></div>
-                    <div class="block-content">
-                        <p style="margin-bottom:0">A legislação educacional brasileira (Resolução CNE/CES nº 7/2018) exige que cursos de graduação reservem ao menos 10% da carga horária total para atividades de extensão universitária.</p>
+                    <div class="block-header"><span>O que muda na prática?</span></div>
+                    <div class="block-content" style="padding:0">
+                        <div style="padding:14px 16px; border-bottom:1px solid var(--border-color)">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">👶 Para Calouros (ingressantes a partir de 2025.3)</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Sem busca por empresas ou parceiros no PEX I. O foco é absorver o roteiro teórico. A execução prática começa no PEX II.</span>
+                        </div>
+                        <div style="padding:14px 16px">
+                            <strong style="color:var(--text-primary); display:block; margin-bottom:4px">🧭 Para Veteranos (modelo antigo)</strong>
+                            <span style="color:var(--text-secondary); font-size:13px">Seu PEX I continua válido e não precisa ser refeito. Você é o mentor dos novos colegas.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Áreas do PEX na Descomplica</h2>
+                <div class="card-grid" style="margin-top:8px">
+                    <div class="card" style="cursor:default">
+                        <h3 class="card-title">💻 Tech</h3>
+                        <p class="card-desc">Eng. de Computação, ADS, Eng. de Software, Sistemas de Informação. Projetos com software, IoT, dados e soluções digitais.</p>
+                    </div>
+                    <div class="card" style="cursor:default">
+                        <h3 class="card-title">📈 Gestão</h3>
+                        <p class="card-desc">RH, Administração, Marketing, Logística. Projetos de consultoria, planejamento estratégico e otimização de processos.</p>
+                    </div>
+                    <div class="card" style="cursor:default">
+                        <h3 class="card-title">🤝 Humanidades</h3>
+                        <p class="card-desc">Teologia e áreas sociais. Ações educativas, culturais e de apoio comunitário.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: PEX I (Roteiro) -->
+            <section class="view-section" id="pex1">
+                <h1>📋 Roteiro PEX 1</h1>
+                <p>O PEX I é o seu ponto de partida. Para calouros a partir de 2025.3, trata-se de uma etapa <strong>100% teórica</strong> — sem necessidade de visita presencial a campo. O objetivo é você se inspirar em projetos anteriores e entender o que é o PEX na prática.</p>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">📌</span>
+                    <div class="callout-body">
+                        <strong>Onde acessar o roteiro oficial?</strong>
+                        Acesse a <strong>Plataforma de Aulas (LMS)</strong> da Descomplica → localize o Módulo de Projeto de Extensão na sua grade → clique em PEX I.
+                    </div>
+                </div>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Introduzir o conceito de Projeto de Extensão. O aluno deve se inspirar em projetos anteriores publicados nos Anais. <strong>A atividade não exige ida a campo.</strong></p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox"><span>Acessar o link dos <strong>"Anais de Projeto Integrador de Extensão"</strong> disponibilizado no seu roteiro oficial</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Escolher <strong>um artigo publicado</strong> que seja da sua área de conhecimento (Tech, Gestão ou Humanidades)</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Ler o artigo escolhido com atenção total</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Identificar o ODS (Objetivo de Desenvolvimento Sustentável) que o artigo aborda</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span>Redigir suas conclusões sobre o que leu</span></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox"><span><strong>ODS identificado:</strong> Qual objetivo de desenvolvimento sustentável o artigo trabalhava?</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span><strong>Descrição da atividade:</strong> O que foi realizado no projeto que você leu?</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span><strong>Suas conclusões:</strong> O que você aprendeu com a leitura?</span></li>
+                    <li class="checklist-item"><input type="checkbox"><span><strong>Arquivo PDF:</strong> Anexar o PDF do artigo que você escolheu</span></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Carga horária do PEX I</strong>
+                        Em geral, são exigidas <strong>40 horas</strong> de atividades por semestre. Confirme a carga exata no seu histórico e roteiro oficial, pois pode variar por curso.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para estruturar suas conclusões</h2>
+                <p>Você pode usar ferramentas de IA (como ChatGPT ou Gemini) para organizar suas ideias antes de escrever. Use o prompt abaixo como ponto de partida — adapte para o artigo que você leu:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body" id="prompt-pex1">Leia o seguinte resumo de um artigo de extensão universitária:
+
+[COLE AQUI O RESUMO OU TRECHO DO ARTIGO]
+
+Com base neste artigo, me ajude a:
+1. Identificar qual ODS (Objetivo de Desenvolvimento Sustentável) ele se relaciona e por quê.
+2. Fazer um resumo em 3 parágrafos da atividade que foi realizada no projeto.
+3. Escrever minhas conclusões pessoais sobre o que aprendi com a leitura, em linguagem acadêmica simples.</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: Os 17 ODS da ONU</strong>
+                        ODS 1: Erradicação da Pobreza · ODS 2: Fome Zero · ODS 3: Saúde e Bem-Estar · ODS 4: Educação de Qualidade · ODS 8: Trabalho Decente · ODS 9: Indústria e Inovação · ODS 10: Redução das Desigualdades · ODS 11: Cidades Sustentáveis · ODS 16: Paz e Justiça. Consulte o roteiro LMS para saber quais ODS são mais relevantes para sua área.
                     </div>
                 </div>
             </section>
@@ -314,24 +467,589 @@
                     </div>
                 </div>
 
-                <div class="structured-block">
-                    <div class="block-header"><span>Checklist antes de Enviar</span></div>
-                    <div class="block-content" style="padding:0">
-                        <div style="padding:12px 16px; border-bottom:1px solid var(--border-color)">
-                            <span style="color:var(--text-secondary); font-size:13px">✅ Relatório em formato PDF com nome correto (ex: <em>PEX_NomeAluno_Semestre.pdf</em>)</span>
-                        </div>
-                        <div style="padding:12px 16px; border-bottom:1px solid var(--border-color)">
-                            <span style="color:var(--text-secondary); font-size:13px">✅ Todas as seções obrigatórias presentes (Introdução, Metodologia, Resultados, Conclusão)</span>
-                        </div>
-                        <div style="padding:12px 16px; border-bottom:1px solid var(--border-color)">
-                            <span style="color:var(--text-secondary); font-size:13px">✅ Anexos e evidências incluídos e nomeados corretamente</span>
-                        </div>
-                        <div style="padding:12px 16px">
-                            <span style="color:var(--text-secondary); font-size:13px">✅ Formulário de horas assinado digitalizado em PDF junto ao relatório</span>
-                        </div>
+                <h2>✅ Checklist antes de Enviar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-pdf">
+                        <label for="check-pdf"><span>Relatório em formato PDF com nome correto (ex: <em>PEX_NomeAluno_Semestre.pdf</em>)</span></label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-secoes">
+                        <label for="check-secoes"><span>Todas as seções obrigatórias presentes (Introdução, Metodologia, Resultados, Conclusão)</span></label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-anexos">
+                        <label for="check-anexos"><span>Anexos e evidências incluídos e nomeados corretamente</span></label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-formulario">
+                        <label for="check-formulario"><span>Formulário de horas assinado digitalizado em PDF junto ao relatório</span></label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-plagio">
+                        <label for="check-plagio"><span>Taxa de similaridade no Turnitin/Copyspider abaixo de 25%</span></label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-email">
+                        <label for="check-email"><span>E-mail de confirmação de envio recebido e salvo como comprovante</span></label>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ════════════════════════════════════════ -->
+            <!-- MISSÕES PRÁTICAS: PEX I ao PEX VIII    -->
+            <!-- ════════════════════════════════════════ -->
+
+            <!-- ── MISSÃO PEX I ──────────────────────── -->
+            <section class="view-section" id="missao-pex1">
+                <h1>📋 Missão PEX I</h1>
+                <p>O PEX I é sua porta de entrada no mundo da extensão universitária. Não há visita a campo — o objetivo é você se inspirar em projetos reais já publicados e refletir sobre o impacto social deles.</p>
+
+                <a class="download-btn" href="assets/Roteiro Ciência da Computação I - PEX.pdf" download>
+                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX I (PDF)
+                </a>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Introduzir o conceito de Projeto de Extensão por meio da leitura de um artigo publicado nos Anais. <strong>A atividade não exige ida a campo.</strong></p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m1fa1"><label for="m1fa1"><span>Acessar o link dos <strong>"Anais de Projeto Integrador de Extensão"</strong> disponibilizado no roteiro oficial</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1fa2"><label for="m1fa2"><span>Escolher <strong>um artigo publicado</strong> da sua área (Tech, Gestão ou Humanidades)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1fa3"><label for="m1fa3"><span>Ler o artigo com atenção total</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1fa4"><label for="m1fa4"><span>Identificar o ODS (Objetivo de Desenvolvimento Sustentável) abordado</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1fa5"><label for="m1fa5"><span>Redigir suas conclusões pessoais sobre a leitura</span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m1en1"><label for="m1en1"><span><strong>ODS identificado</strong> — qual objetivo ele abordava e por quê</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1en2"><label for="m1en2"><span><strong>Descrição da atividade</strong> — o que foi realizado no projeto lido</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1en3"><label for="m1en3"><span><strong>Suas conclusões</strong> — o que você aprendeu com a leitura</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m1en4"><label for="m1en4"><span><strong>Arquivo PDF</strong> do artigo escolhido anexado na plataforma</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Carga horária do PEX I</strong>
+                        Em geral, são exigidas <strong>40 horas</strong> de atividades por semestre. Confirme a carga exata no roteiro oficial, pois pode variar por curso.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para estruturar suas conclusões</h2>
+                <p>Cole o resumo do artigo que você escolheu e use o prompt abaixo para organizar sua resposta antes de escrever no formulário oficial:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Leia o seguinte resumo de um artigo de extensão universitária:
+
+[COLE AQUI O RESUMO OU TRECHO DO ARTIGO]
+
+Com base neste artigo, me ajude a:
+1. Identificar qual ODS (Objetivo de Desenvolvimento Sustentável) ele se relaciona e por quê.
+2. Fazer um resumo em 3 parágrafos da atividade realizada no projeto.
+3. Escrever minhas conclusões pessoais em linguagem acadêmica simples.</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: Os 17 ODS da ONU</strong>
+                        ODS 1: Erradicação da Pobreza · ODS 3: Saúde e Bem-Estar · ODS 4: Educação de Qualidade · ODS 8: Trabalho Decente · ODS 9: Indústria e Inovação · ODS 10: Redução das Desigualdades · ODS 11: Cidades Sustentáveis · ODS 16: Paz e Justiça. Consulte o LMS para ver quais ODS se aplicam à sua área.
                     </div>
                 </div>
             </section>
+
+            <!-- ── MISSÃO PEX II ─────────────────────── -->
+            <section class="view-section" id="missao-pex2">
+                <h1>📋 Missão PEX II</h1>
+                <p>É hora do primeiro contato real com o campo. Você vai identificar uma organização parceira, apresentar o PEX, realizar o diagnóstico e construir o plano de ação inicial.</p>
+
+                <a class="download-btn" href="assets/Roteiro Ciência da Computação II - PEX.docx.pdf" download>
+                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX II (PDF)
+                </a>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Capacitar o aluno a diagnosticar processos e sistemas em organizações reais, coletar dados e propor soluções viáveis alinhadas à área de formação.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m2fa1"><label for="m2fa1"><span>Escolher a organização parceira (ONG, empresa, escola, associação) e apresentar o PEX com a <strong>Carta de Apresentação</strong></span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2fa2"><label for="m2fa2"><span>Elaborar o <strong>Plano de Visita</strong> com objetivos, áreas a analisar e agenda</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2fa3"><label for="m2fa3"><span>Realizar a visita: entrevistas, aplicação de formulários, observação de documentos</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2fa4"><label for="m2fa4"><span>Mapear contexto e identificar situações-problema reais (gargalos, falhas, processos manuais)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2fa5"><label for="m2fa5"><span>Avaliar a situação e propor soluções iniciais viáveis</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2fa6"><label for="m2fa6"><span>Coletar assinatura do <strong>Termo de Autorização</strong></span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m2en1"><label for="m2en1"><span><strong>Carta de Apresentação</strong> + <strong>Termo de Autorização</strong> assinado pela organização</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2en2"><label for="m2en2"><span><strong>Plano de Visita</strong> documentado (objetivos, cronograma, instrumentos usados)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2en3"><label for="m2en3"><span><strong>Registros da visita</strong> (ata, fotos, questionários aplicados)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m2en4"><label for="m2en4"><span><strong>Relatório Técnico</strong> com: contextualização, situação-problema, análise crítica e proposta de solução</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Documentação obrigatória</strong>
+                        O <strong>Termo de Autorização</strong> assinado é indispensável para validar a realização do PEX. Sem ele, a entrega pode ser recusada pelo avaliador.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para estruturar o relatório técnico</h2>
+                <p>Após a visita, use o prompt abaixo para transformar suas anotações em um relatório bem estruturado:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Realizei uma visita a uma organização para o meu Projeto de Extensão (PEX). Aqui estão minhas anotações:
+
+Organização: [NOME E TIPO]
+Problema identificado: [DESCREVA O PROBLEMA]
+Dados coletados: [ENTREVISTAS, OBSERVAÇÕES, DOCUMENTOS]
+
+Com base nisso, me ajude a estruturar um Relatório Técnico com:
+1. Contextualização da organização e seu contexto
+2. Diagnóstico detalhado do problema identificado
+3. Análise crítica das causas
+4. Proposta de solução viável e seu impacto esperado</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: como escolher uma boa organização parceira</strong>
+                        Prefira organizações locais (bairro, cidade) com problema real e recorrente. ONGs, escolas públicas, associações de moradores e pequenas empresas são excelentes opções para projetos de impacto mensurável.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO PEX III ────────────────────── -->
+            <section class="view-section" id="missao-pex3">
+                <h1>📋 Missão PEX III</h1>
+                <p>Com o diagnóstico em mãos, é hora de aprofundar a análise. Você vai identificar as causas raiz dos problemas, mapear fatores críticos e propor estratégias concretas de intervenção.</p>
+
+                <a class="download-btn" href="assets/Roteiro Ciência da Computação III - PEX.docx.pdf" download>
+                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX III (PDF)
+                </a>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Desenvolver a capacidade de análise técnica e crítica dos problemas identificados, propondo estratégias de solução alinhadas à área de formação.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m3fa1"><label for="m3fa1"><span>Analisar criticamente os problemas mapeados usando técnicas: <strong>causa raiz, SWOT, 5 Porquês</strong></span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m3fa2"><label for="m3fa2"><span>Identificar fatores-chave que causam ou agravam os problemas</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m3fa3"><label for="m3fa3"><span>Desenvolver estratégias iniciais de solução ou protótipos de conceito</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m3fa4"><label for="m3fa4"><span>Elaborar materiais técnicos de apoio: fluxogramas, planilhas, cartilhas, wireframes</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m3fa5"><label for="m3fa5"><span>Validar as propostas com a organização parceira (reunião de alinhamento)</span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m3en1"><label for="m3en1"><span><strong>Relatório de Análise Crítica</strong> (fatores-chave, análise técnica, estratégias propostas)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m3en2"><label for="m3en2"><span><strong>Material Técnico Desenvolvido</strong> (fluxogramas, planilhas, cartilhas ou wireframes)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m3en3"><label for="m3en3"><span><strong>Registros das interações</strong> com a organização (fotos, atas, validações)</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Atenção à especificidade técnica</strong>
+                        A análise deve ser técnica e focada na sua área de formação. Evite conclusões genéricas — o avaliador busca profundidade e coerência entre o problema e a solução proposta.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para estruturar sua análise</h2>
+                <p>Use o prompt abaixo para transformar suas observações em uma análise crítica estruturada:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Realizei o diagnóstico de uma organização para meu PEX e encontrei o seguinte problema:
+
+Problema: [DESCREVA]
+Contexto: [SETOR, PORTE, PÚBLICO]
+Dados coletados: [RESUMO DAS INFORMAÇÕES]
+
+Me ajude a fazer uma análise crítica estruturada com:
+1. Análise de causa raiz do problema (técnica dos 5 Porquês ou Ishikawa)
+2. Identificação dos 3 fatores-chave que perpetuam o problema
+3. Proposição de 2 estratégias de solução viáveis com justificativa técnica
+4. Indicadores de sucesso para medir o impacto da solução</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: ferramentas de análise recomendadas</strong>
+                        Análise SWOT (forças, fraquezas, oportunidades, ameaças) · Diagrama de Ishikawa (causa e efeito) · Técnica dos 5 Porquês · Mapa de Jornada do Usuário (para projetos de UX/Sistemas)
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO PEX IV ─────────────────────── -->
+            <section class="view-section" id="missao-pex4">
+                <h1>📋 Missão PEX IV</h1>
+                <p>Fase de imersão em dados. Você vai estruturar um plano de coleta, ir a campo coletar informações reais e transformá-las em um relatório técnico ou dossê consolidado.</p>
+
+                <a class="download-btn" href="assets/Roteiro Ciência da Computação IV - PEX.docx.pdf" download>
+                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX IV (PDF)
+                </a>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Desenvolver competências na coleta, organização e análise de dados técnicos, consolidando informações para fundamentar as propostas de intervenção.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m4fa1"><label for="m4fa1"><span>Elaborar o <strong>Plano de Coleta de Dados</strong> (métodos, ferramentas, fontes, cronograma)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m4fa2"><label for="m4fa2"><span>Conduzir a coleta: entrevistas, questionários, análise de documentos, observação in loco</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m4fa3"><label for="m4fa3"><span>Organizar e limpar os dados coletados (planilhas, agrupamento, categorização)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m4fa4"><label for="m4fa4"><span>Identificar padrões, gargalos e tendências relevantes na análise</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m4fa5"><label for="m4fa5"><span>Consolidar resultados e recomendações no relatório final</span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m4en1"><label for="m4en1"><span><strong>Relatório Final / Dossê Técnico</strong> com análise de dados, achados e recomendações</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m4en2"><label for="m4en2"><span><strong>Evidências documentais</strong> (fotos, materiais coletados, feedbacks, gráficos)</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Qualidade dos dados importa</strong>
+                        Dados coletados de fontes primárias (entrevistas, observação) têm mais peso avaliativo do que dados secundários. Diversifique os métodos de coleta para enriquecer o relatório.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para analisar seus dados coletados</h2>
+                <p>Com os dados em mãos, use o prompt abaixo para estruturar a análise e os achados:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Coletei os seguintes dados durante meu Projeto de Extensão:
+
+Contexto: [ORGANIZAÇÃO E PROBLEMA]
+Dados coletados: [RESUMO DAS ENTREVISTAS/QUESTIONÁRIOS/OBSERVAÇÕES]
+
+Me ajude a:
+1. Identificar os 3 principais padrões ou achados nos dados
+2. Apontar os gargalos mais críticos encontrados
+3. Elaborar 3 recomendações práticas baseadas nos dados
+4. Sugerir indicadores para medir o sucesso das recomendações</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: ferramentas de coleta e análise</strong>
+                        Google Forms (questionários) · Notion / Excel (organização de dados) · Miro (mapas mentais e diagramas) · Python/Pandas (análise de dados para cursos de TI/Ciência de Dados)
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO PEX V ──────────────────────── -->
+            <section class="view-section" id="missao-pex5">
+                <h1>📋 Missão PEX V</h1>
+                <p>É hora de planejar e testar. Você vai estruturar o projeto completo com cronograma e indicadores, e executar um piloto em menor escala para validar a proposta antes do deploy final.</p>
+
+                <a class="download-btn" href="assets/Roteiro Ciência da Computação V - PEX.docx.pdf" download>
+                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX V (PDF)
+                </a>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Consolidar competências para estruturar um plano de intervenção detalhado e validar parcialmente a proposta por meio de uma execução piloto com feedback real.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m5fa1"><label for="m5fa1"><span>Estruturar o projeto completo: Introdução, Objetivos, Público-alvo, Metodologia, Cronograma, Indicadores de sucesso</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5fa2"><label for="m5fa2"><span>Decidir o que testar em escala reduzida (módulo, protótipo, modelo de ML, oficina piloto)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5fa3"><label for="m5fa3"><span>Preparar o ambiente de teste (homologação, grupo reduzido, bancada)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5fa4"><label for="m5fa4"><span>Executar o piloto e coletar evidências (prints, logs, medições, questionários de feedback)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5fa5"><label for="m5fa5"><span>Identificar problemas, coletar sugestões e revisar o plano com base nos resultados</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5fa6"><label for="m5fa6"><span>Elaborar o <strong>Relatório de Execução Preliminar</strong></span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m5en1"><label for="m5en1"><span><strong>Documento de Estruturação Completa do Projeto</strong> (Plano de Ação detalhado com cronograma e indicadores)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5en2"><label for="m5en2"><span><strong>Relatório de Execução Preliminar (Piloto)</strong> com evidências e feedbacks coletados</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m5en3"><label for="m5en3"><span><strong>Refinamento Final</strong> — versão atualizada do plano de ação após o piloto</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>O piloto precisa ter evidências reais</strong>
+                        Não entregue apenas o plano sem os resultados do piloto. O avaliador verifica se houve execução real — prints, fotos, logs ou questionários respondidos são obrigatórios.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para estruturar seu plano de ação</h2>
+                <p>Use o prompt abaixo para construir o documento de estruturação completa do seu PEX V:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Estou estruturando meu Projeto de Extensão (PEX V). Aqui estão as informações base:
+
+Problema: [DESCREVA]
+Solução proposta: [DESCREVA A INTERVENÇÃO]
+Público-alvo: [QUEM SERÁ BENEFICIADO]
+Organização parceira: [NOME E TIPO]
+
+Ajude-me a estruturar um Plano de Ação completo com:
+1. Introdução e justificativa
+2. Objetivo geral e 3 objetivos específicos
+3. Metodologia com 5 etapas detalhadas
+4. Cronograma dividido em 4 meses
+5. 3 indicadores de sucesso mensuráveis</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: como fazer um bom piloto</strong>
+                        Escolha apenas 10–20% do escopo total para testar. O objetivo não é fazer tudo, mas validar se a solução funciona e coletar feedback honesto dos beneficiários antes da execução completa.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO PEX VI ─────────────────────── -->
+            <section class="view-section" id="missao-pex6">
+                <h1>📋 Missão PEX VI</h1>
+                <p>A execução completa. Você vai colocar sua solução em campo de verdade, monitorar indicadores em tempo real, lidar com imprevistos e registrar cada etapa para o relatório final.</p>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">🔜</span>
+                    <div class="callout-body">
+                        <strong>Roteiro oficial — em breve</strong>
+                        O PDF do roteiro oficial do PEX VI ainda não está disponível para download. Acesse a <a href="https://aulas.descomplica.com.br/graduacao/" target="_blank" rel="noopener noreferrer"><strong>Plataforma de Aulas</strong></a> da Descomplica para acessar a versão oficial enquanto isso.
+                    </div>
+                </div>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Executar o projeto de intervenção real, colocando em prática as soluções planejadas, monitorando sua efetividade e documentando tudo com rigor técnico.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m6fa1"><label for="m6fa1"><span>Revisar o plano do PEX V e confirmar parceria, recursos e cronograma com a organização</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6fa2"><label for="m6fa2"><span>Executar as atividades: desenvolvimento de software, instalação de hardware, realização de oficinas ou treinamentos</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6fa3"><label for="m6fa3"><span>Interagir com os beneficiários e registrar cada etapa da execução (fotos, logs, atas)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6fa4"><label for="m6fa4"><span>Monitorar o progresso com os indicadores definidos, identificar falhas e aplicar correções</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6fa5"><label for="m6fa5"><span>Desenvolver soluções alternativas para imprevistos que surgirem</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6fa6"><label for="m6fa6"><span>Realizar avaliação parcial dos resultados com os beneficiários ao final</span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m6en1"><label for="m6en1"><span><strong>Planejamento e Alinhamento Técnico</strong> (documentação de contatos, objetivos e cronograma executado)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6en2"><label for="m6en2"><span><strong>Registros detalhados da execução</strong> (testes funcionais, observações, fotos, logs)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6en3"><label for="m6en3"><span><strong>Análise técnica e diagnóstico</strong> (avaliação crítica, falhas encontradas e como foram resolvidas)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m6en4"><label for="m6en4"><span><strong>Proposta e plano de continuidade</strong> com recomendações técnicas para a organização</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Documente enquanto executa — não depois</strong>
+                        Registros feitos na hora têm muito mais credibilidade. Tire fotos, gere logs, salve prints e registre atas a cada visita. Reconstruir evidências após a execução é muito mais difícil.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para gerar seu relatório de execução</h2>
+                <p>Após cada visita ou etapa concluída, use o prompt abaixo para transformar seus registros em texto técnico estruturado:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Estou executando meu Projeto de Extensão e preciso documentar uma etapa de execução:
+
+Etapa realizada: [DESCREVA A ATIVIDADE]
+O que funcionou bem: [PONTOS POSITIVOS]
+Problemas encontrados: [DIFICULDADES]
+Feedback dos beneficiários: [O QUE DISSERAM]
+
+Ajude-me a redigir um registro técnico desta etapa em linguagem acadêmica que inclua:
+1. Descrição objetiva da atividade realizada
+2. Resultados parciais observados
+3. Problemas identificados e como foram tratados
+4. Próximos passos planejados</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: como lidar com imprevistos</strong>
+                        Imprevistos são esperados e têm valor acadêmico. Documente o problema, a decisão tomada e o resultado. Isso demonstra maturidade profissional e enriquece o relatório com situações reais.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO PEX VII ────────────────────── -->
+            <section class="view-section" id="missao-pex7">
+                <h1>📋 Missão PEX VII</h1>
+                <p>Chegou a hora de olhar para trás com rigor. Você vai reunir todas as evidências, avaliar o impacto real gerado, mapear sucessos e limites do projeto e entregar o relatório final de avaliação.</p>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">🔜</span>
+                    <div class="callout-body">
+                        <strong>Roteiro oficial — em breve</strong>
+                        O PDF do roteiro oficial do PEX VII ainda não está disponível para download. Acesse a <a href="https://aulas.descomplica.com.br/graduacao/" target="_blank" rel="noopener noreferrer"><strong>Plataforma de Aulas</strong></a> da Descomplica para acessar a versão oficial enquanto isso.
+                    </div>
+                </div>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Avaliar criticamente os resultados do projeto executado, identificar impactos reais, pontos fortes, limitações técnicas e propor melhorias concretas para continuidade ou replicação.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m7fa1"><label for="m7fa1"><span>Reunir todos os registros do projeto (relatórios, fotos, códigos-fonte, logs, esquemáticos)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m7fa2"><label for="m7fa2"><span>Revisar os indicadores definidos no PEX V e comparar com os resultados reais</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m7fa3"><label for="m7fa3"><span>Colher feedback formal dos beneficiários (questionário de satisfação ou entrevista final)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m7fa4"><label for="m7fa4"><span>Avaliar o impacto real gerado (mudanças percebidas, relevância, adoção da solução)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m7fa5"><label for="m7fa5"><span>Mapear acertos, dificuldades e limitações técnicas com honestidade</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m7fa6"><label for="m7fa6"><span>Estruturar o <strong>Relatório Final de Avaliação</strong> completo</span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m7en1"><label for="m7en1"><span><strong>Relatório Final de Avaliação</strong> (Resumo executivo, Resultados, Análise crítica, Propostas de melhoria)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m7en2"><label for="m7en2"><span><strong>Evidências anexas</strong> (fotos, materiais, feedbacks coletados, gráficos de resultado, códigos)</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>Seja honesto sobre os limites do projeto</strong>
+                        Um relatório que só aponta sucessos parece irreal para o avaliador. Identificar e explicar as limitações técnicas com clareza demonstra maturidade acadêmica e profissional.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para escrever a avaliação de resultados</h2>
+                <p>Use o prompt abaixo para estruturar sua análise crítica e propostas de melhoria:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Executei meu Projeto de Extensão e preciso avaliar os resultados. Aqui estão as informações:
+
+Objetivo do projeto: [DESCREVA]
+O que foi executado: [RESUMO DA EXECUÇÃO]
+Resultados alcançados: [O QUE MUDOU NA ORGANIZAÇÃO]
+Dificuldades encontradas: [PROBLEMAS QUE SURGIRAM]
+Feedback dos beneficiários: [O QUE DISSERAM]
+
+Ajude-me a escrever um Relatório de Avaliação de Resultados com:
+1. Avaliação de impacto e efetividade (metas vs. resultados reais)
+2. Identificação de 3 pontos fortes do projeto
+3. Identificação de 2 limitações técnicas ou operacionais
+4. Propostas de melhoria para uma próxima iteração
+5. Considerações finais em linguagem acadêmica</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: como medir impacto real</strong>
+                        Compare o estado da organização <em>antes</em> e <em>depois</em> do projeto usando os mesmos indicadores. Mesmo que não tenha dados quantitativos, relatos qualitativos dos beneficiários são evidências válidas.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── MISSÃO PEX VIII ───────────────────── -->
+            <section class="view-section" id="missao-pex8">
+                <h1>📋 Missão PEX VIII</h1>
+                <p>A etapa final de consolidação. Você vai formalizar o legado do projeto, produzir material reutilizável pela organização, disseminar o conhecimento gerado e — se possível — submeter para publicação.</p>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">🔜</span>
+                    <div class="callout-body">
+                        <strong>Roteiro oficial — em breve</strong>
+                        O PDF do roteiro oficial do PEX VIII ainda não está disponível para download. Acesse a <a href="https://aulas.descomplica.com.br/graduacao/" target="_blank" rel="noopener noreferrer"><strong>Plataforma de Aulas</strong></a> da Descomplica para acessar a versão oficial enquanto isso.
+                    </div>
+                </div>
+
+                <h2>🎯 Objetivo desta etapa</h2>
+                <p>Consolidar todas as fases do PEX em um material legado reutilizável e disseminar os resultados por meio de publicações, apresentações ou submissão ao Festival de Inovação da Descomplica.</p>
+
+                <h2>🗂 O que você vai fazer</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m8fa1"><label for="m8fa1"><span>Revisar e consolidar toda a documentação produzida ao longo das fases anteriores</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8fa2"><label for="m8fa2"><span>Elaborar um <strong>Material Legado</strong> (guia, manual, cartilha ou repositório) para reaplicação futura</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8fa3"><label for="m8fa3"><span>Criar indicadores de continuidade e entregar à organização parceira junto com o material</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8fa4"><label for="m8fa4"><span>Produzir conteúdo de disseminação: artigo técnico, vídeo de apresentação, podcast ou slides</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8fa5"><label for="m8fa5"><span>Apresentar o projeto em seminário acadêmico, evento ou live (quando possível)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8fa6"><label for="m8fa6"><span>Submeter o projeto para o <strong>Festival de Inovação Tecnológica</strong> da Descomplica (se for projeto de destaque)</span></label></li>
+                </ul>
+
+                <h2>📥 O que você precisa entregar</h2>
+                <ul class="checklist">
+                    <li class="checklist-item"><input type="checkbox" id="m8en1"><label for="m8en1"><span><strong>Relatório de Consolidação Final</strong> (sumário executivo, resultados, impactos, recomendações)</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8en2"><label for="m8en2"><span><strong>Material Legado</strong> (guia, manual ou cartilha) entregue e assinado pela organização</span></label></li>
+                    <li class="checklist-item"><input type="checkbox" id="m8en3"><label for="m8en3"><span><strong>Evidências de disseminação</strong> (fotos da apresentação, link do artigo, print da submissão)</span></label></li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <span class="callout-icon">⚠️</span>
+                    <div class="callout-body">
+                        <strong>O Material Legado é obrigatório</strong>
+                        Não basta executar e ir embora — a organização parceira precisa receber algo que permita continuar sem você. Isso demonstra responsabilidade social real e impacto duradouro.
+                    </div>
+                </div>
+
+                <h2>🤖 Usando IA para criar o material legado</h2>
+                <p>Use o prompt abaixo para transformar o conhecimento gerado no PEX em um guia prático reutilizável:</p>
+
+                <div class="prompt-card">
+                    <div class="prompt-card-header">
+                        <span class="prompt-card-label">💬 Prompt sugerido</span>
+                        <button class="prompt-copy-btn" onclick="copyPrompt(this)">Copiar</button>
+                    </div>
+                    <div class="prompt-card-body">Concluí meu Projeto de Extensão e preciso criar um Material Legado para a organização parceira. Aqui está o contexto:
+
+Projeto realizado: [DESCREVA BREVEMENTE]
+Solução implementada: [O QUE FOI CRIADO/INSTALADO/ENSINADO]
+Público que usará o material: [PERFIL DOS USUÁRIOS]
+
+Ajude-me a estruturar um Guia Prático de Continuidade com:
+1. Resumo do projeto e seus objetivos
+2. Como usar/manter a solução implementada (passo a passo)
+3. Indicadores para monitorar a continuidade
+4. Contatos e recursos de apoio para dúvidas futuras
+5. Próximos passos recomendados para a organização</div>
+                </div>
+
+                <div class="callout callout-info">
+                    <span class="callout-icon">💡</span>
+                    <div class="callout-body">
+                        <strong>Dica: como submeter para o Festival de Inovação</strong>
+                        O Festival da Descomplica publica projetos de destaque nos Anais. Verifique no LMS o prazo de submissão, o formato exigido (geralmente PDF de 4–6 páginas no modelo ABNT) e as categorias disponíveis.
+                    </div>
+                </div>
+            </section>
+
+
 
         </div><!-- /.main-content -->
     </div><!-- /.internal-layout -->
