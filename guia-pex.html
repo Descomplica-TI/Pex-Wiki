@@ -7,6 +7,40 @@
     <link rel="icon" type="image/x-icon" href="assets/PEX%20Wiki%20Logo.ico">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* ── Button Variations (Glassmorphism) ─────────── */
+        .btn-roteiro {
+            background: linear-gradient(135deg, rgba(153,153,153,0.15) 0%, rgba(153,153,153,0.05) 100%) !important;
+            border-color: rgba(153,153,153,0.4) !important;
+            color: #d4d4d4 !important;
+        }
+        .btn-roteiro:hover {
+            background: linear-gradient(135deg, rgba(153,153,153,0.25) 0%, rgba(153,153,153,0.15) 100%) !important;
+            border-color: rgba(153,153,153,0.6) !important;
+            color: #ffffff !important;
+        }
+
+        .btn-modelo {
+            background: linear-gradient(135deg, rgba(0,123,255,0.2) 0%, rgba(0,123,255,0.1) 100%) !important;
+            border-color: rgba(0,123,255,0.45) !important;
+            color: #8ab4f8 !important;
+        }
+        .btn-modelo:hover {
+            background: linear-gradient(135deg, rgba(0,123,255,0.35) 0%, rgba(0,123,255,0.2) 100%) !important;
+            border-color: rgba(0,123,255,0.7) !important;
+            color: #ffffff !important;
+        }
+
+        .btn-canva {
+            background: linear-gradient(135deg, rgba(125,42,232,0.2) 0%, rgba(125,42,232,0.1) 100%) !important;
+            border-color: rgba(125,42,232,0.45) !important;
+            color: #d2a8ff !important;
+        }
+        .btn-canva:hover {
+            background: linear-gradient(135deg, rgba(125,42,232,0.35) 0%, rgba(125,42,232,0.2) 100%) !important;
+            border-color: rgba(125,42,232,0.7) !important;
+            color: #ffffff !important;
+        }
+
         /* ── View sections ─────────────────────────────── */
         .view-section {
             display: none;
@@ -580,9 +614,20 @@ Com base neste artigo, me ajude a:
                 <h1>📋 Missão PEX I</h1>
                 <p>O PEX I é sua porta de entrada no mundo da extensão universitária. Não há visita a campo — o objetivo é você se inspirar em projetos reais já publicados e refletir sobre o impacto social deles.</p>
 
-                <a class="download-btn" href="assets/Roteiro Ciência da Computação I - PEX.pdf" download>
-                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX I (PDF)
-                </a>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <a class="download-btn btn-roteiro" href="assets/Roteiro Ciência da Computação I - PEX.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX I (PDF)
+                    </a>
+                    <a class="download-btn btn-roteiro" href="assets/Anais-XI-Mostra-PEX.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📚</span> Baixar Anais da XI Mostra (PDF)
+                    </a>
+                    <a class="download-btn btn-modelo" href="assets/PEX I - Modelo.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📝</span> Baixar Modelo PEX I (PDF)
+                    </a>
+                    <a class="download-btn btn-canva" href="https://www.canva.com/design/DAHFFSTtXk4/aPH3JN4w656jOdyOBxY5-A/edit?utm_content=DAHFFSTtXk4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="margin-bottom: 0;">
+                        <span class="download-icon">🎨</span> Editar no Canva
+                    </a>
+                </div>
 
                 <h2>🎯 Objetivo desta etapa</h2>
                 <p>Introduzir o conceito de Projeto de Extensão por meio da leitura de um artigo publicado nos Anais. <strong>A atividade não exige ida a campo.</strong></p>
@@ -644,9 +689,17 @@ Com base neste artigo, me ajude a:
                 <h1>📋 Missão PEX II</h1>
                 <p>É hora do primeiro contato real com o campo. Você vai identificar uma organização parceira, apresentar o PEX, realizar o diagnóstico e construir o plano de ação inicial.</p>
 
-                <a class="download-btn" href="assets/Roteiro Ciência da Computação II - PEX.pdf" download>
-                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX II (PDF)
-                </a>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <a class="download-btn btn-roteiro" href="assets/Roteiro Ciência da Computação II - PEX.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX II (PDF)
+                    </a>
+                    <a class="download-btn btn-modelo" href="assets/PEX II - Modelo.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📝</span> Baixar Modelo PEX II (PDF)
+                    </a>
+                    <a class="download-btn btn-canva" href="https://www.canva.com/design/DAHFGdzxFzU/EQVkXsYCTdDOSOpEEmkvgA/edit?utm_content=DAHFGdzxFzU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="margin-bottom: 0;">
+                        <span class="download-icon">🎨</span> Editar no Canva
+                    </a>
+                </div>
 
                 <h2>🎯 Objetivo desta etapa</h2>
                 <p>Capacitar o aluno a diagnosticar processos e sistemas em organizações reais, coletar dados e propor soluções viáveis alinhadas à área de formação.</p>
@@ -712,9 +765,17 @@ Com base nisso, me ajude a estruturar um Relatório Técnico com:
                 <h1>📋 Missão PEX III</h1>
                 <p>Com o diagnóstico em mãos, é hora de aprofundar a análise. Você vai identificar as causas raiz dos problemas, mapear fatores críticos e propor estratégias concretas de intervenção.</p>
 
-                <a class="download-btn" href="assets/Roteiro Ciência da Computação III - PEX.pdf" download>
-                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX III (PDF)
-                </a>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <a class="download-btn btn-roteiro" href="assets/Roteiro Ciência da Computação III - PEX.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX III (PDF)
+                    </a>
+                    <a class="download-btn btn-modelo" href="assets/PEX III - Modelo.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📝</span> Baixar Modelo PEX III (PDF)
+                    </a>
+                    <a class="download-btn btn-canva" href="https://www.canva.com/design/DAHFGTy3zSg/hbtvpzgetkkwk6d5faaWLA/edit?utm_content=DAHFGTy3zSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="margin-bottom: 0;">
+                        <span class="download-icon">🎨</span> Editar no Canva
+                    </a>
+                </div>
 
                 <h2>🎯 Objetivo desta etapa</h2>
                 <p>Desenvolver a capacidade de análise técnica e crítica dos problemas identificados, propondo estratégias de solução alinhadas à área de formação.</p>
@@ -778,9 +839,17 @@ Me ajude a fazer uma análise crítica estruturada com:
                 <h1>📋 Missão PEX IV</h1>
                 <p>Fase de imersão em dados. Você vai estruturar um plano de coleta, ir a campo coletar informações reais e transformá-las em um relatório técnico ou dossê consolidado.</p>
 
-                <a class="download-btn" href="assets/Roteiro Ciência da Computação IV - PEX.pdf" download>
-                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX IV (PDF)
-                </a>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <a class="download-btn btn-roteiro" href="assets/Roteiro Ciência da Computação IV - PEX.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX IV (PDF)
+                    </a>
+                    <a class="download-btn btn-modelo" href="assets/PEX IV - Modelo.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📝</span> Baixar Modelo PEX IV (PDF)
+                    </a>
+                    <a class="download-btn btn-canva" href="https://www.canva.com/design/DAHFGikxfmQ/EGDBUY3LFhPUxak-h9ntQw/edit?utm_content=DAHFGikxfmQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="margin-bottom: 0;">
+                        <span class="download-icon">🎨</span> Editar no Canva
+                    </a>
+                </div>
 
                 <h2>🎯 Objetivo desta etapa</h2>
                 <p>Desenvolver competências na coleta, organização e análise de dados técnicos, consolidando informações para fundamentar as propostas de intervenção.</p>
@@ -842,9 +911,17 @@ Me ajude a:
                 <h1>📋 Missão PEX V</h1>
                 <p>É hora de planejar e testar. Você vai estruturar o projeto completo com cronograma e indicadores, e executar um piloto em menor escala para validar a proposta antes do deploy final.</p>
 
-                <a class="download-btn" href="assets/Roteiro Ciência da Computação V - PEX.pdf" download>
-                    <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX V (PDF)
-                </a>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <a class="download-btn btn-roteiro" href="assets/Roteiro Ciência da Computação V - PEX.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📄</span> Baixar Roteiro Oficial — PEX V (PDF)
+                    </a>
+                    <a class="download-btn btn-modelo" href="assets/PEX V - Modelo.pdf" download style="margin-bottom: 0;">
+                        <span class="download-icon">📝</span> Baixar Modelo PEX V (PDF)
+                    </a>
+                    <a class="download-btn btn-canva" href="https://www.canva.com/design/DAHFGpQOxps/reWTx-kzpMq80IM94bIU0Q/edit?utm_content=DAHFGpQOxps&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="margin-bottom: 0;">
+                        <span class="download-icon">🎨</span> Editar no Canva
+                    </a>
+                </div>
 
                 <h2>🎯 Objetivo desta etapa</h2>
                 <p>Consolidar competências para estruturar um plano de intervenção detalhado e validar parcialmente a proposta por meio de uma execução piloto com feedback real.</p>
